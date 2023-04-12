@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="huy.ha (generated)" id="1681294276223-1">
+        <createTable tableName="authors">
+            <column name="id" type="BINARY(16)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="authorsPK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681294276223-2">
+        <addColumn tableName="book">
+            <column name="authors_id" type="binary(16)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681294276223-3">
+        <addForeignKeyConstraint baseColumnNames="authors_id" baseTableName="book" constraintName="FKdi13ax7wdgqxnfqv00u23fx4e" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="authors" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

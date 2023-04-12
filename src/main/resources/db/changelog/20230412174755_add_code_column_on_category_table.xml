@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="huy.ha (generated)" id="1681296482025-3">
+        <addColumn tableName="category">
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681296482025-4">
+        <addUniqueConstraint columnNames="code" constraintName="UC_CATEGORYCODE_COL" tableName="category"/>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681296482025-1">
+        <dropUniqueConstraint constraintName="UC_CATEGORYNAME_COL" tableName="category"/>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681296482025-2">
+        <addUniqueConstraint columnNames="name" constraintName="UC_CATEGORYNAME_COL" tableName="category"/>
+    </changeSet>
+</databaseChangeLog>

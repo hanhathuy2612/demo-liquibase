@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="huy.ha (generated)" id="1681294821088-1">
+        <addColumn tableName="book">
+            <column name="category_id" type="binary(16)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="huy.ha (generated)" id="1681294821088-2">
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="book" constraintName="FKam9riv8y6rjwkua1gapdfew4j" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="category" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
